@@ -1,0 +1,24 @@
+{
+  "name": "musinsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitari/musinsa.git"
+  },
+  "keywords": [],
+  "author": "김사엽",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hitari/musinsa/issues"
+  },
+  "homepage": "https://github.com/hitari/musinsa#readme",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
