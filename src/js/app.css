@@ -53,6 +53,9 @@
 .character_item {
   position: relative;
 }
+.character_item > dl {
+  margin-right: 40px;
+}
 .unit_info {
 }
 .unit_info .title {
