@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.js',
+    app: './src/index',
   },
   output: {
     filename: 'bundle.[contenthash].js',
@@ -27,6 +27,7 @@ module.exports = {
     },
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       '@features': path.resolve(__dirname, 'src/js/features'),
       '@components': path.resolve(__dirname, 'src/js/components'),
@@ -43,6 +44,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
+      favicon: 'public/favicon.ico',
       inject: 'body',
     }),
   ],
@@ -50,7 +52,14 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/i,
