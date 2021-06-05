@@ -29,9 +29,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      '@': path.resolve(__dirname, 'src/'),
       '@features': path.resolve(__dirname, 'src/js/features'),
       '@components': path.resolve(__dirname, 'src/js/components'),
-      '@': path.resolve(__dirname, 'src/'),
+      '@hooks': path.resolve(__dirname, 'src/js/hooks'),
+      '@store': path.resolve(__dirname, 'src/js/store'),
+      '@api': path.resolve(__dirname, 'src/js/api'),
+      customHook: path.resolve(__dirname, 'src/js/hooks'),
     },
   },
   devtool: 'inline-source-map',
