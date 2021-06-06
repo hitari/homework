@@ -5,23 +5,25 @@ export const FETCHCHARACTERS = 'FETCHCHARACTERS';
 export const FETCHNEXTCHARACTERS = 'FETCHNEXTCHARACTERS';
 export const SETLOADING = 'SETLOADING';
 export const TOGGLEFILTER = 'TOGGLEFILTER';
+export const RESETFILTER = 'RESETFILTER';
 
 // 액션 생성
 export const fetchCharacters = (payload) => ({ type: FETCHCHARACTERS, payload });
 export const fetchNextCharacters = (payload) => ({ type: FETCHNEXTCHARACTERS, payload });
 export const setLoading = (payload) => ({ type: SETLOADING, payload });
 export const toggleFilter = (payload) => ({ type: TOGGLEFILTER, payload });
+export const resetFilter = (payload) => ({ type: RESETFILTER, payload });
 
 // 비동기 액션 생성
 export const fetchCharactersAsync =
-  ({ params = [] }) =>
+  ({ page = 1, params = [] }) =>
   async (dispatch, getState) => {
     const { loading } = getState;
     if (loading === 'pending') return;
     dispatch(setLoading({ loading: 'pending' }));
-    const response = await getCharacters({ params });
+    const response = await getCharacters({ page, params });
     const isNext = response.length > 0;
-    dispatch(fetchCharacters({ characters: response, page: 1, loading: 'idle', hasNext: isNext }));
+    dispatch(fetchCharacters({ characters: response, page, loading: 'idle', hasNext: isNext }));
   };
 
 export const fetchNextCharactersAsync =

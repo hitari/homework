@@ -4,3 +4,6 @@ export const makeUrlForGetMethod = (url = '', params = []) => {
   urlInfo.search = new URLSearchParams(params).toString();
   return urlInfo;
 };
+
+// query param value를 추출한다.
+export const getUrlParam = (name) => new URLSearchParams(location.search).get(name);
