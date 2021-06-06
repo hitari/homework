@@ -56,6 +56,7 @@
 .character_item {
   position: relative;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 .character_item > dl {
   border: 1px solid #aaa;
@@ -64,17 +65,26 @@
   padding: 7px;
 }
 .unit_info {
+  float: left;
+  min-width: 40%;
+  max-width: 50%;
+}
+.unit_info.one_line {
+  width: 100%;
+  max-width: 100%;
 }
 .unit_info .title {
   float: left;
-  text-overflow: ellipsis;
+}
+.unit_info .content {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 .unit_info .title::after {
   content: ':';
   margin: 0 2px;
-}
-.unit_info .content {
 }
 .delete_button {
   position: absolute;
@@ -89,4 +99,183 @@
   width: 18px;
   height: 18px;
   fill: #fff;
+}
+.nodata {
+  text-align: center;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  content: '';
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* skeleton CSS */
+@keyframes loading {
+  0% {
+    transform: translateX(0);
+  }
+  50%,
+  100% {
+    transform: translateX(460px);
+  }
+}
+
+.skeleton_item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 73px;
+  border: 1px solid #aaa;
+  margin: 0 0 10px 0;
+  padding: 7px;
+}
+
+.skeleton_button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_first::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_first {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  width: 80px;
+  height: 20px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_first::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_second {
+  position: absolute;
+  top: 9px;
+  left: 37%;
+  width: 100px;
+  height: 20px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_second::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_third {
+  position: absolute;
+  top: 32px;
+  left: 7px;
+  width: 80px;
+  height: 20px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_third::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_fourth {
+  position: absolute;
+  top: 58px;
+  left: 7px;
+  width: 80px;
+  height: 20px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_fourth::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
+}
+
+.skeleton_fifth {
+  position: absolute;
+  top: 58px;
+  left: 37%;
+  width: 100px;
+  height: 20px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.skeleton_fifth::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: #f2f2f2;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 2s infinite linear;
 }

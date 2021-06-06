@@ -3,8 +3,8 @@ import React from 'react';
 const Item = ({ id, name, aliases, titles, books, tvSeries, onClick }) => {
   return (
     <div className="character_item">
-      <dl>
-        <div className="unit_info">
+      <dl className="clearfix">
+        <div className="unit_info ">
           <dt className="title">name</dt>
           <dd className="content">{name}</dd>
         </div>
@@ -12,7 +12,7 @@ const Item = ({ id, name, aliases, titles, books, tvSeries, onClick }) => {
           <dt className="title">aliases</dt>
           <dd className="content">{aliases}</dd>
         </div>
-        <div className="unit_info">
+        <div className="unit_info one_line">
           <dt className="title">title</dt>
           <dd className="content">{titles}</dd>
         </div>
