@@ -1,3 +1,4 @@
+// json-server로 변경하여 사용하지 않음.
 const characterList = [
   {
     url: 'https://www.anapioficeandfire.com/api/characters/11',

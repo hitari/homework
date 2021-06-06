@@ -1,17 +1,23 @@
 import React from 'react';
 
-const Filter = ({ filterList }) => {
+const Filter = ({ filters, handleFilterClick }) => {
   // 필터가 없으면 빈 fragment 반환
-  if (!filterList.length) return <></>;
+  if (!filters.length) return <></>;
 
   return (
     <div>
       <ul className="filter">
-        {filterList.map((item) => {
+        {filters.map((item) => {
           return (
-            <li className="filter_item" key={item.name}>
-              <input type="checkbox" id="filter0" />
-              <label htmlFor="filter0" className="filter_label">
+            <li
+              className="filter_item"
+              key={item.name}
+              onClick={(event) => {
+                handleFilterClick(event, item);
+              }}
+            >
+              <input type="checkbox" id={`filter-${item.name}`} />
+              <label htmlFor={`filter-${item.name}`} className="filter_label">
                 <span>{item.name}</span>
               </label>
             </li>

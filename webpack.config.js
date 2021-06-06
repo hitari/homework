@@ -35,6 +35,7 @@ module.exports = {
       '@hooks': path.resolve(__dirname, 'src/js/hooks'),
       '@store': path.resolve(__dirname, 'src/js/store'),
       '@api': path.resolve(__dirname, 'src/js/api'),
+      '@helper': path.resolve(__dirname, 'src/js/helper'),
       customHook: path.resolve(__dirname, 'src/js/hooks'),
     },
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Item = ({ name, aliases, titles, povBooks, tvSeries, onClick }) => {
+const Item = ({ name, aliases, titles, books, tvSeries, onClick }) => {
   return (
     <div className="character_item">
       <dl>
@@ -10,19 +10,19 @@ const Item = ({ name, aliases, titles, povBooks, tvSeries, onClick }) => {
         </div>
         <div className="unit_info">
           <dt className="title">aliases</dt>
-          <dd className="content">{aliases.join(', ')}</dd>
+          <dd className="content">{aliases}</dd>
         </div>
         <div className="unit_info">
           <dt className="title">title</dt>
-          <dd className="content">{titles.join(', ')}</dd>
+          <dd className="content">{titles}</dd>
         </div>
         <div className="unit_info">
           <dt className="title">books</dt>
-          <dd className="content">{povBooks.length}</dd>
+          <dd className="content">{books}</dd>
         </div>
         <div className="unit_info">
           <dt className="title">tvSeries</dt>
-          <dd className="content">{tvSeries.length}</dd>
+          <dd className="content">{tvSeries}</dd>
         </div>
       </dl>
       <button className="delete_button" onClick={onClick}>
