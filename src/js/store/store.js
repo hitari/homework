@@ -1,5 +1,5 @@
 import React from 'react';
-import { FETCHCHARACTERS, FETCHNEXTCHARACTERS, CHANGE_TITLE, SETLOADING, TOGGLEFILTER, RESETFILTER } from './actions';
+import { FETCHCHARACTERS, FETCHNEXTCHARACTERS, SETLOADING, TOGGLEFILTER, RESETFILTER, REGISTERERROR } from './actions';
 import filterList from '@/mock/filterData';
 
 // context
@@ -14,6 +14,7 @@ const initialState = {
   limit: 10,
   hasNext: false,
   loading: '',
+  error: {},
 };
 
 // 리듀서
@@ -35,11 +36,6 @@ const reducer = (state, action) => {
         page: payload.page,
         hasNext: payload.hasNext,
         loading: payload.loading,
-      };
-    case CHANGE_TITLE:
-      return {
-        ...state,
-        title: payload.title,
       };
     case SETLOADING:
       return {
@@ -63,6 +59,11 @@ const reducer = (state, action) => {
         filters: state.filters.map((filter) => {
           return { ...filter, isActive: false };
         }),
+      };
+    case REGISTERERROR:
+      return {
+        ...state,
+        error: payload.error,
       };
     default:
       return state;
