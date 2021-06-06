@@ -20,6 +20,7 @@ const List = ({ list, fetchList, handleDeleteCharacterClick }) => {
         return (
           <Item
             key={item.url}
+            id={item.url}
             name={item.name}
             aliases={item.aliases.join(', ')}
             titles={item.titles.join(', ')}

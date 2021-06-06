@@ -1,4 +1,5 @@
 import React from 'react';
+import { FETCHCHARACTERS, FETCHNEXTCHARACTERS, CHANGE_TITLE, SETLOADING, TOGGLEFILTER, RESETFILTER } from './actions';
 import filterList from '@/mock/filterData';
 
 // context
@@ -19,7 +20,7 @@ const initialState = {
 const reducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
-    case 'FETCHCHARACTERS':
+    case FETCHCHARACTERS:
       return {
         ...state,
         characters: payload.characters,
@@ -27,7 +28,7 @@ const reducer = (state, action) => {
         hasNext: payload.hasNext,
         loading: payload.loading,
       };
-    case 'FETCHNEXTCHARACTERS':
+    case FETCHNEXTCHARACTERS:
       return {
         ...state,
         characters: [...state.characters, ...payload.characters],
@@ -35,25 +36,32 @@ const reducer = (state, action) => {
         hasNext: payload.hasNext,
         loading: payload.loading,
       };
-    case 'CHANGE_TITLE':
+    case CHANGE_TITLE:
       return {
         ...state,
         title: payload.title,
       };
-    case 'SETLOADING':
+    case SETLOADING:
       return {
         ...state,
         loading: payload.loading,
       };
-    case 'TOGGLEFILTER':
+    case TOGGLEFILTER:
       return {
         ...state,
         filters: state.filters.map((filter) => {
           if (filter.name === payload.name) {
-            return { ...filter, active: !filter.active };
+            return { ...filter, isActive: !filter.isActive };
           } else {
             return filter;
           }
+        }),
+      };
+    case RESETFILTER:
+      return {
+        ...state,
+        filters: state.filters.map((filter) => {
+          return { ...filter, isActive: false };
         }),
       };
     default:

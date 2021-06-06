@@ -10,7 +10,7 @@ const Filter = ({ filters, handleFilterClick }) => {
         {filters.map((item) => {
           return (
             <li
-              className="filter_item"
+              className={'filter_item' + (item.isActive ? ' active' : '')}
               key={item.name}
               onClick={(event) => {
                 handleFilterClick(event, item);
@@ -23,12 +23,6 @@ const Filter = ({ filters, handleFilterClick }) => {
             </li>
           );
         })}
-        <li className="filter_item">
-          <input type="checkbox" id="filter3" />
-          <label htmlFor="filter3" className="filter_label">
-            <span>초기화</span>
-          </label>
-        </li>
       </ul>
     </div>
   );

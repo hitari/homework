@@ -4,19 +4,25 @@ const filterList = [
     name: '생존인물만',
     type: 'api',
     requirement: { isAlive: true },
-    active: false,
+    isActive: false,
   },
   {
     name: '여자',
     type: 'api',
     requirement: { gender: 'Female' },
-    active: false,
+    isActive: false,
   },
   {
     name: 'tvSeries 없음',
     type: 'store',
     requirement: 'noTvSeries',
-    active: false,
+    isActive: false,
+  },
+  {
+    name: '초기화',
+    type: 'reset',
+    requirement: 'reset',
+    isActive: false,
   },
 ];
 

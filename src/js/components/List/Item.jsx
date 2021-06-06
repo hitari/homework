@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Item = ({ name, aliases, titles, books, tvSeries, onClick }) => {
+const Item = ({ id, name, aliases, titles, books, tvSeries, onClick }) => {
   return (
     <div className="character_item">
       <dl>
@@ -25,7 +25,7 @@ const Item = ({ name, aliases, titles, books, tvSeries, onClick }) => {
           <dd className="content">{tvSeries}</dd>
         </div>
       </dl>
-      <button className="delete_button" onClick={onClick}>
+      <button className="delete_button" onClick={(event) => onClick(event, id)}>
         <svg
           className="delete_ico"
           xmlns="http://www.w3.org/2000/svg"
