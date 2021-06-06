@@ -13,7 +13,7 @@ const initialState = {
   page: 1,
   limit: 10,
   hasNext: false,
-  loading: 'idle',
+  loading: '',
 };
 
 // 리듀서

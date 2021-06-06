@@ -35,6 +35,5 @@ export const fetchNextCharactersAsync =
     const nextPage = page + 1;
     const response = await getCharacters({ page: nextPage, params });
     const isNext = response.length > 0;
-    // dispatch(fetchCharacters({ title: res }));
     dispatch(fetchNextCharacters({ characters: response, page: nextPage, loading: 'idle', hasNext: isNext }));
   };

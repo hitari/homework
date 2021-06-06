@@ -19,6 +19,18 @@ const filterList = [
     isActive: false,
   },
   {
+    name: '집필서적 2권이상',
+    type: 'store',
+    requirement: 'moreBooks',
+    isActive: false,
+  },
+  {
+    name: 'Braavosi',
+    type: 'api',
+    requirement: { culture: 'Braavosi' },
+    isActive: false,
+  },
+  {
     name: '초기화',
     type: 'reset',
     requirement: 'reset',

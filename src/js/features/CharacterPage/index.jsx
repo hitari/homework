@@ -9,7 +9,7 @@ import { getUrlParam } from '@helper/urlHelper';
 
 const CharacterPage = () => {
   const dispatch = useDispatch();
-  const { title, filters, characters } = useSelector();
+  const { title, filters, characters, loading } = useSelector();
   const [params, setParams] = useState([]);
   const [exceptionList, setExceptionList] = useState([]);
 
@@ -36,7 +36,7 @@ const CharacterPage = () => {
   const filterToParam = (name) => {
     const params = filters
       .filter((filter) => {
-        if (filter.type !== 'api') false;
+        if (filter.type !== 'api') return false;
         if (filter.name === name) return !filter.isActive;
         return filter.isActive;
       })
@@ -77,7 +77,12 @@ const CharacterPage = () => {
     <div>
       <Header title={title} />
       <Filter filters={filters} handleFilterClick={handleFilterClick} />
-      <List list={filterCharacters} fetchList={fetchNextList} handleDeleteCharacterClick={handleDeleteCharacterClick} />
+      <List
+        list={filterCharacters}
+        loading={loading}
+        fetchList={fetchNextList}
+        handleDeleteCharacterClick={handleDeleteCharacterClick}
+      />
     </div>
   );
 };
