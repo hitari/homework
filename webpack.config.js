@@ -26,6 +26,13 @@ module.exports = {
       },
     },
   },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    host: 'localhost',
+    port: port,
+    open: true,
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
@@ -38,13 +45,6 @@ module.exports = {
       '@helper': path.resolve(__dirname, 'src/js/helper'),
       customHook: path.resolve(__dirname, 'src/js/hooks'),
     },
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    host: 'localhost',
-    port: port,
-    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
