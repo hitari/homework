@@ -7,7 +7,7 @@ const Context = React.createContext();
 
 // 초기값 정의
 const initialState = {
-  title: '무신사 테스트',
+  title: '무신사 과제',
   filters: filterList,
   characters: [],
   page: 1,

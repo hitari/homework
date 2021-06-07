@@ -9,7 +9,7 @@ import { getUrlParam } from '@helper/urlHelper';
 
 const CharacterPage = () => {
   const dispatch = useDispatch();
-  const { title, filters, characters, loading } = useSelector();
+  const { title, filters, characters, loading, page } = useSelector();
   const [params, setParams] = useState([]);
   const [exceptionList, setExceptionList] = useState([]);
 
@@ -27,15 +27,17 @@ const CharacterPage = () => {
   // filter 클릭 이벤트
   const handleFilterClick = (event, { type, name }) => {
     event.preventDefault();
-
-    if (type === 'reset') return filterReset();
-    if (type === 'api') {
-      const params = filterToParam({ filters, name });
-      setParams(params);
-      dispatch(fetchCharactersAsync({ params }));
+    switch (type) {
+      case 'reset':
+        filterReset();
+        break;
+      case 'api':
+        const params = filterToParam({ filters, name });
+        setParams(params);
+        dispatch(fetchCharactersAsync({ params }));
+      default:
+        dispatch(toggleFilter({ name }));
     }
-
-    dispatch(toggleFilter({ name }));
   };
 
   // Character Item Delete 버튼 클릭 이벤트
@@ -55,6 +57,7 @@ const CharacterPage = () => {
     dispatch(fetchCharactersAsync({}));
   }, []);
 
+  // 삭제 및 필터를 적용하는 Characters
   const filterCharacters = useMemo(() => {
     return characters.filter((character) => {
       // exceptionList 등록된 character 제외 로직

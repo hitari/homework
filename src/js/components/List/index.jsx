@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Item from './Item';
 import ItemSkeleton from './ItemSkeleton';
 import { arrayToCount } from '@helper/arrayHelper';
@@ -15,7 +15,9 @@ const List = ({ list, loading, fetchList, handleDeleteCharacterClick }) => {
     },
   });
 
+  // 데이터 없음 반환
   if (loading === 'idle' && list.length === 0) return <div className="nodata">데이터가 존재 하지 않습니다.</div>;
+  // 초기 로딩시 skeleton 반환
   if (loading === 'pending' && list.length === 0) {
     return new Array(10).fill(1).map((v, i) => {
       return <ItemSkeleton key={i} />;
