@@ -1,4 +1,4 @@
-import { getCharacters } from '@api/API';
+import { getCharacters } from '@api/charactersAPI';
 
 // 액션 타입
 export const FETCHCHARACTERS = 'FETCHCHARACTERS';
@@ -16,7 +16,7 @@ export const toggleFilter = (payload) => ({ type: TOGGLEFILTER, payload });
 export const resetFilter = (payload) => ({ type: RESETFILTER, payload });
 export const registerError = (payload) => ({ type: REGISTERERROR, payload });
 
-// 비동기 액션 생성
+// Characters 호출 액션 실행
 export const fetchCharactersAsync =
   ({ page = 1, params = [] }) =>
   async (dispatch, getState) => {
@@ -32,6 +32,7 @@ export const fetchCharactersAsync =
     }
   };
 
+// 다음 page Characters 호출 액션 실행
 export const fetchNextCharactersAsync =
   ({ params = [] }) =>
   async (dispatch, getState) => {
