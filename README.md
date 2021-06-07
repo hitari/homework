@@ -1,6 +1,6 @@
 # 무신사 과제
 
-> React library 기반으로 사용하였습니다. 개인적으로 다른 미들웨어나 추가 라이브러리 없이 만들어 보고 싶어서 그대로 진행 하였고, thunk 나 redux의 applymiddleware는 해당 github을 참조해서 개발해 사용하였습니다.
+> React library 기반으로 작업하였습니다. 개인적으로 다른 미들웨어나 추가 라이브러리 없이 만들어 보고 싶어서 그대로 진행 하였고, thunk 나 redux의 applymiddleware는 해당 github을 참조해서 유사하게 제작하여 사용하였습니다.
 
 ## # 설치 및 실행방법
 
