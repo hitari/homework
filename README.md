@@ -5,10 +5,16 @@
 ## # 설치 및 실행방법
 
 ```sh
+# init
 git clone https://github.com/hitari/homework.git
 cd homework
 npm i
+
+# webpack-dev-server
 npm start
+
+# build
+npm run build
 ```
 
 ## # 과제 진행시 고민사항 및 부연설명
